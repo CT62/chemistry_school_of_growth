@@ -147,7 +147,7 @@ export default function CourseCard({
           ))}
           <div className="text-black pl-1">
             (
-            <Link href={`/courses/${courseID}`} className="text-black underline underline-offset-1">
+            <Link href={`/courses/${courseID}/reviews`} className="text-black underline underline-offset-1">
               {reviewsCount} reviews
             </Link>
             )
@@ -233,7 +233,7 @@ export default function CourseCard({
         </div>
         <div className="add-to-cart-section">
           <button
-	  className={`flex ${isPurchased ? 'bg-gradient-to-r from-green-500 to-green-400' : 'bg-gradient-to-r from-cyan-500 to-blue-500'} shadow-md text-gray-900 px-4 py-2 rounded focus:outline-none transition text-white font-semibold`}
+	  className={`flex ${isPurchased ? 'bg-gradient-to-r from-green-500 to-green-400' : 'transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-md hover:shadow-cyan-500  bg-gradient-to-r from-cyan-500 to-blue-500'} shadow-md text-gray-900 px-4 py-2 rounded focus:outline-none transition text-white font-semibold`}
         onClick={handlePurchase}
           >
             {((status !== 'authenticated' && !isPurchased) || (status === 'authenticated' && !isPurchased)) && (<p>Buy now</p>)}
@@ -243,5 +243,4 @@ export default function CourseCard({
       </div>
     </div>
   );
-  
 }

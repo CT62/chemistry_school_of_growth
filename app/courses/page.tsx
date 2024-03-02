@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar'
+import AskMe from '@/components/AskMe'
 import prisma from '../prisma/client';
 import CourseCards from '@/components/CourseCards'
 import { Prompt } from 'next/font/google'
@@ -36,6 +37,7 @@ return(
 			<li className="sm:flex sm:justify-center pb-2.5">Tips on how to get a H1</li>
 	</div>
 	</div>
+  <AskMe/>
   </div>
 	)
 }
