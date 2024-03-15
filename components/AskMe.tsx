@@ -20,50 +20,48 @@ export default function AskMe() {
         Ask Me
       </button>
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-50 backdrop-blur-md">
-          <div className="bg-white p-8 rounded shadow-lg w-full md:w-3/6">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold">Questions and Answers</h2>
-              <button className="text-black" onClick={togglePopup}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
+      <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-50 backdrop-blur-md">
+      <div className="bg-white p-8 rounded shadow-lg w-full md:w-3/6">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-lg font-semibold">Questions and Answers</h2>
+          <button className="text-black" onClick={togglePopup}>
+	  X
+          </button>
+        </div>
 
-            <hr className="border-gray-400 my-2 pb-4 w-full" />
-            <div>
-              <div className="mb-4 flex justify-between items-center">
-                <button className="flex justify-between transition ease-in-out delay-150 hover:-translate-y-1 px-3 py-3 border border-gray-400 rounded hover:bg-gray-200 text-left w-full">Question 1
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                </svg>
-		</button>
-              </div>
-              <div className="mb-4 flex justify-between items-center">
-                <button className="flex justify-between transition ease-in-out delay-150 hover:-translate-y-1 px-3 py-3 border border-gray-400 rounded hover:bg-gray-200 text-left w-full">Question 2
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                </svg>
-		</button>
-              </div>
-              <div className="mb-4 flex justify-between items-center">
-                <button className="flex justify-between transition ease-in-out delay-150 hover:-translate-y-1 px-3 py-3 border border-gray-400 rounded hover:bg-gray-200 text-left w-full">Question 3
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                </svg>
-		</button>
-              </div>
-              <div className="mb-4 flex justify-between items-center">
-                <button className="flex justify-between transition ease-in-out delay-150 hover:-translate-y-1 px-3 py-3 border border-gray-400 rounded hover:bg-gray-200 text-left w-full">Question 4
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                </svg>
-		</button>
-              </div>
-            </div>
+        <hr className="border-gray-400 my-2 pb-4 w-full" />
+        <div>
+          <div className="mb-4 flex justify-between items-center">
+            <button className="flex justify-between transition ease-in-out delay-150 hover:-translate-y-1 px-3 py-3 border border-gray-400 rounded hover:bg-gray-200 text-left w-full">question 1
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+          <div className="mb-4 flex justify-between items-center">
+            <button className="flex justify-between transition ease-in-out delay-150 hover:-translate-y-1 px-3 py-3 border border-gray-400 rounded hover:bg-gray-200 text-left w-full">question 2
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+          <div className="mb-4 flex justify-between items-center">
+            <button className="flex justify-between transition ease-in-out delay-150 hover:-translate-y-1 px-3 py-3 border border-gray-400 rounded hover:bg-gray-200 text-left w-full">question 3
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+          <div className="mb-4 flex justify-between items-center">
+            <button className="flex justify-between transition ease-in-out delay-150 hover:-translate-y-1 px-3 py-3 border border-gray-400 rounded hover:bg-gray-200 text-left w-full">question 4
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
           </div>
         </div>
+      </div>
+    </div>
       )}
     </>
   );
