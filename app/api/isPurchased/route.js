@@ -11,7 +11,6 @@ export async function POST(req) {
                 userEmail: userSession.userEmail,
             }
         });
-        console.log('User:', user);
 
         if (user && userSession.userEmail) {
             return NextResponse.json({ 'isPurchased': true });

@@ -9,6 +9,7 @@ const stripe = new Stripe("sk_test_51OOIuAF7RC2rD4L0ztLoVOWE38zlxWaG0TKnfyZ203tl
 });
 
 export async function POST(req) {
+  console.log(req)
   try {
     const event = await req.json();
     switch (event?.type) {
@@ -19,18 +20,18 @@ export async function POST(req) {
 
         const customerId = customer.id;
         const customerEmail = customer.email;
-	const courseId = customer.metadata
+	      const courseId = customer.metadata
 
         console.log('Customer ID:', customerId);
         console.log('Customer Email:', customerEmail);
-	console.log('CourseID:', courseId.courseID);
+	      console.log('CourseID:', courseId.courseID);
 	
-	await prisma.purchase.create({
-		data:{
-			courseId: courseId.courseID,
-			userEmail: customerEmail,
-		}
-	})
+    	await prisma.purchase.create({
+	    	data:{
+		    	courseId: courseId.courseID,
+			    userEmail: customerEmail,
+		    }
+	    })
         break;
 
       case 'payment_method.attached':

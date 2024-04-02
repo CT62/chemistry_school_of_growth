@@ -70,6 +70,7 @@ export default function CourseCard({
 
 
   const handlePurchase = async () => {
+  console.log(status)
   if (status === "authenticated") {
     if(!isPurchased){
     	checkout({
@@ -201,7 +202,6 @@ export default function CourseCard({
                   />
                 </div>
               </div>
-  
               <div>
                 <button
                   type="submit"

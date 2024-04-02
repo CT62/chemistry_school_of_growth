@@ -27,11 +27,6 @@ export async function POST(request){
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const customerSession = await stripeSession.customers.create({
-	    email: email,
-	    name:name,
-    });
-    const stripeId = customerSession.id;
     
     const user = await prisma.user.create({
         data: {
@@ -41,7 +36,6 @@ export async function POST(request){
         }
     });
     
-    console.log(user.id)
     
     return NextResponse.json(user)
 }

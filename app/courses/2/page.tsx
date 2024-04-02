@@ -1,7 +1,10 @@
 "use client"
+import axios from "axios";
 import FileSystem from '@/components/FilePage.tsx';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { useState,useEffect } from 'react';
 import { useSession } from 'next-auth/react';
+import prisma from '../../prisma/client';
 
 export default function course2(){
 	const files = [
@@ -426,13 +429,29 @@ export default function course2(){
 	]},
 	];
 	const { data: session, status } = useSession();
+const [isPurchased, setIsPurchased] = useState(false);
+const router = useRouter();
 
+useEffect(() => {
+  const fetchData = async () => {
     if (!session) {
-    	redirect('/signin')
+    	router.push('/signin');
+    } else {
+      const response = await axios.post('/api/isPurchased', { 'CourseID': String(3), 'userEmail': session?.user?.email });
+      setIsPurchased(response.data.isPurchased);
     }
-	return(
-		<div className="py-10">
-			<FileSystem title="5th year revision course I" files={files} />
-		</div>
-	);
+  };
+
+  fetchData();
+}, [session]);
+
+return (
+  <>
+    {isPurchased ? (
+      <div className="py-10">
+        <FileSystem title="5th year revision course part II/Experiment course part II" files={files} />
+      </div>
+    ) : null}
+  </>
+);	
 }

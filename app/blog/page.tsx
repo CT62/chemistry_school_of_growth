@@ -5,7 +5,7 @@ import AskAI from '../../components/AskAI';
 
 export default function Blog() {
     return (
-        <div className="container mx-auto py-8">
+        <div className="container mx-auto pt-12 py-8">
             <h1 className="text-3xl font-bold mb-6 text-center pb-8">How to get a H1 in Chemistry</h1>
 
 	    <hr className="border-gray-300"></hr>
