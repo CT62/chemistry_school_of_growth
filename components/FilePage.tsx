@@ -60,13 +60,13 @@ if (selectedFile) {
   return (
   <div className="min-h-screen flex flex-col items-center">
   {title && (
-    <button onClick={navigateUp} className="mb-4 px-6 py-5 rounded-lg flex items-center">
+    <button onClick={navigateUp} className="mb-4 px-6 py-1 rounded-lg lg:flex items-center">
       <div className="flex items-center mr-8">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 mr-2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
         </svg>
       </div>
-      <div className="text-3xl font-bold">{title}</div>
+      <div className="text-3xl font-bold pt-5">{title}</div>
     </button>
   )}
   <div className="max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 w-full">

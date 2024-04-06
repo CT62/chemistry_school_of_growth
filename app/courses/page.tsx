@@ -1,23 +1,36 @@
+import {useEffect} from "react";
 import Navbar from '@/components/Navbar'
 import AskMe from '@/components/AskMe'
 import prisma from '../prisma/client';
+import Sale from "@/components/Sale"
 import CourseCards from '@/components/CourseCards'
+import CourseSale from "@/components/courseSale";
+import calculateTimeLeft from "@/components/calculateTimeLeft"
 import { Prompt } from 'next/font/google'
 
 export default async function Courses(){
-const courses = await prisma.course.findMany({
+  const courses = await prisma.course.findMany({
     orderBy: {
       courseId: 'asc'
     }
   });
-return(
-	<div className="bg-[#1e42b0]">
+  
+  let time = calculateTimeLeft();
+  return(
+<div className="bg-[#1e42b0]">
   <div aria-hidden="true" className="absolute inset-0 grid grid-cols-3 -space-x-52">
             <div className="blur-[106px] h-32 bg-cyan-300"></div>
             <div className="blur-[106px] h-56 bg-cyan-400"></div>
             <div className="blur-[106px] h-32 bg-cyan-300"></div>
   </div>
-	<div className="relative py-16 font-bold text-5xl flex justify-center text-white">Courses</div>
+	<h1 className="relative pt-16 font-bold text-5xl flex justify-center text-white">Courses</h1>
+
+	<div className="relative pb-14 pt-2 font-semibold text-xl justify-center text-white flex justify-center">
+	{time.saleType!=undefined &&(
+	  <CourseSale/>
+	)}
+      </div>
+
 	<div className="container mx-auto">
 	<div className="relative grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-4" >
   {courses.map((course,index)=>(
@@ -37,7 +50,7 @@ return(
 			<li className="sm:flex sm:justify-center pb-2.5">Tips on how to get a H1</li>
 	</div>
 	</div>
-  <AskMe/>
+  {/*<AskMe/>*/}
   </div>
 	)
 }

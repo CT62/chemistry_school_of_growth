@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Star from './star';
 import StarFill from './star-fill';
+import CalculateTimeLeft from "@/components/calculateTimeLeft"
 import StarHalf from './star-half';
 import { useSession, signIn } from 'next-auth/react'
 import { parse } from 'path';
@@ -39,6 +40,7 @@ export default function CourseCard({
   const [isLoginVisable, setIsLoginVisable] = useState(false);
   const noPoints = points[0] === '';
   const router = useRouter();
+  let timeL = CalculateTimeLeft();
 
   const [data, setData] = useState({
             email: '',
@@ -226,9 +228,11 @@ export default function CourseCard({
       <hr className="my-4 border-gray-300" />
       <div className="bottom-section flex justify-between items-end ">
         <div className="price-section flex">
+          {timeL.saleType!=undefined && (
           <p className="text-gray-400 mb-1 mr-2">
             <span className="line-through line-through decoration-red-500">€{fakeprice}</span>
           </p>
+          )}
           <p className="text-black font-semibold">€{price}</p>
         </div>
         <div className="add-to-cart-section">
