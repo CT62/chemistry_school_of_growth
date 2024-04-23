@@ -31,7 +31,7 @@ export default function course6(){
 			{ FileName: 'Exam Tips CSG Qs', FileType: 'pdf', ContentID:'1ooszIkeBV_OnbfqwLft9lsHOwyMh34GK'},
 		]},
 		{ FileName: 'Q1 tracker', FileType: 'folder', Files:[
-			{ FileName: 'Q1 tracker', FileType: 'folder', ContentID:'1Qx6H3mT3fcbjMSdMcGvA4ZWHpI6iwU-K'},
+			{ FileName: 'Q1 tracker', FileType: 'pdf', ContentID:'1Qx6H3mT3fcbjMSdMcGvA4ZWHpI6iwU-K'},
 		]},
 		{ FileName: 'IUPAC essentials', FileType: 'folder', Files:[
 			{ FileName: 'Image', FileType: 'pdf', ContentID:'1pORjVktJSm1huJjn6fAwP64FIlhE_c2H'},
@@ -73,7 +73,7 @@ export default function course6(){
 	  <>
 		{isPurchased ? (
 		  <div className="py-10">
-			<FileSystem title="5th year revision course part II/Experiment course part II" files={files} />
+			<FileSystem title="Ultimate H1 guide" files={files} />
 		  </div>
 		) : null}
 	  </>

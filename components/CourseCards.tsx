@@ -1,6 +1,9 @@
 'use client'
 import prisma from '../app/prisma/client'
-import React, { useState,useEffect } from 'react';
+import ReactAudioPlayer from "react-audio-player"
+import Player from '@/Player/Player';
+import { songsdata } from '@/Player/audios';
+import React, { useState,useEffect,useRef } from 'react';
 import { checkout } from "../checkout"
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -11,7 +14,6 @@ import StarHalf from './star-half';
 import { useSession, signIn } from 'next-auth/react'
 import { parse } from 'path';
 import axios from "axios";
-
 interface Props {
   title: string;
   points: string[];
@@ -34,10 +36,14 @@ export default function CourseCard({
   reviewsCount,
   stars,
   courseID,
+  AudioURL,
 }: Props) {
   const {data: session,status} = useSession();
   const [isPurchased, setIsPurchased] = useState(false);
   const [isLoginVisable, setIsLoginVisable] = useState(false);
+  const [songs, setSongs] = useState(songsdata);
+  const [isplaying, setisplaying] = useState(false);
+  const [currentSong, setCurrentSong] = useState(songsdata[1]);
   const noPoints = points[0] === '';
   const router = useRouter();
   let timeL = CalculateTimeLeft();
@@ -59,17 +65,28 @@ export default function CourseCard({
   }
 }
 
-  useEffect(() =>{
-  if(session){
-  	checkPurchased();
-  }
-  },[])
-
-
   const handlePopup = () =>{
   	setIsLoginVisable(!isLoginVisable);
   }
 
+  const audioElem = useRef();
+
+  useEffect(() => {
+    if (isplaying) {
+      audioElem.current.play();
+    }
+    else {
+      audioElem.current.pause();
+    }
+  }, [isplaying, currentSong])
+
+  const onPlaying = () => {
+    const duration = audioElem.current.duration;
+    const ct = audioElem.current.currentTime;
+
+    setCurrentSong({ ...currentSong, "progress": ct / duration * 100, "length": duration })
+
+  }
 
   const handlePurchase = async () => {
   console.log(status)
@@ -78,10 +95,11 @@ export default function CourseCard({
     	checkout({
     	lineItems: [
     		{
-      		price: prices[parseInt(courseID)],
-      		quantity: 1,
-     		}
+          price: prices[parseInt(courseID)],
+          quantity: 1,
+        }
    	],
+
 	
     authSession: session?.user,
     courseID,
@@ -120,13 +138,22 @@ export default function CourseCard({
      starElements.push(<Star key={i} />);
    }
    return starElements;
+
 }; 
   return (
     <div className="bg-white p-6 rounded-lg flex flex-col">
       <div className="content-section flex-grow">
-        <div className="title-section">
-          <h2 className="text-xl font-bold text-sm pb-2">{title}</h2>
-        </div>
+      <div className="bg-white">
+      </div>
+      <div className="title-section flex justify-between">
+  <h2 className="text-xl font-bold text-sm pb-2 pr-2">{title}</h2>
+  <div style={{ width: "40px", height: "40px" }}>
+    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1.5 px-1.5 rounded-full">
+      <audio src={AudioURL} ref={audioElem} onTimeUpdate={onPlaying} />
+      <Player songs={songs} setSongs={setSongs} isplaying={isplaying} setisplaying={setisplaying} audioElem={audioElem} currentSong={currentSong} />
+    </button>
+  </div>
+</div>
         <div className="text-gray-700 font-light italic">{titledesc}</div>
         <div className="points-section mb-2 pt-3">
           <ul className={`${!noPoints && 'list-disc'} pl-5`}>
@@ -225,15 +252,16 @@ export default function CourseCard({
       )}
         </div>
       </div>
-      <hr className="my-4 border-gray-300" />
-      <div className="bottom-section flex justify-between items-end ">
+      <hr className="mt-4 border-gray-300 pb-4" />
+      <div className="bottom-section flex justify-between items-end">
         <div className="price-section flex">
-          {timeL.saleType!=undefined && (
-          <p className="text-gray-400 mb-1 mr-2">
-            <span className="line-through line-through decoration-red-500">€{fakeprice}</span>
+          <p className={`${timeL.saleType!=undefined ? 'text-gray-400 mb-1 mr-2':''}`}>
+            <span className={`${timeL.saleType!=undefined ? 'line-through line-through decoration-red-500' : ''}`}>€{fakeprice}</span>
           </p>
-          )}
+
+          {timeL.saleType!=undefined && (
           <p className="text-black font-semibold">€{price}</p>
+          )}
         </div>
         <div className="add-to-cart-section">
           <button

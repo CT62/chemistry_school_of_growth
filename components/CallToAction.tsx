@@ -30,7 +30,7 @@ export default function CallToAction() {
               <span className="text-base font-semibold text-dark">Get Started</span>
             </a>
             <a href="/about" className="px-4 py-2">
-              <span className="font-semibold text-primary">Learn more</span>
+              <span className="font-semibold text-primary">Learn More</span>
             </a>
           </div>
         </div>

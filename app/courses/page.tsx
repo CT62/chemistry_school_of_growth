@@ -16,6 +16,7 @@ export default async function Courses(){
   });
   
   let time = calculateTimeLeft();
+  let audios =["/organic_chemistry_1.mp3","/organic_chemistry_2.mp3","/5th_year_revision_course_part_I.mp3","/experiment_course_part_1.mp3","/fuels_and_thermochemistry.mp3","/experiment_course_part_2.mp3","/ultimate_h1_guide.mp3"];
   return(
 <div className="bg-[#1e42b0]">
   <div aria-hidden="true" className="absolute inset-0 grid grid-cols-3 -space-x-52">
@@ -34,7 +35,7 @@ export default async function Courses(){
 	<div className="container mx-auto">
 	<div className="relative grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-4" >
   {courses.map((course,index)=>(
-		<CourseCards fakeprice={course.fakeprice} price={course.price} time={course.time} title={course.title} points={course.points}  reviewsCount={course.reviewsCount} stars={course.stars} titledesc={course.titleDesc} courseID={String(index)} />
+		<CourseCards fakeprice={course.fakeprice} price={course.price} time={course.time} title={course.title} points={course.points}  reviewsCount={course.reviewsCount} stars={course.stars} titledesc={course.titleDesc} courseID={String(index)} AudioURL={audios[index]} />
   ))}
 
 	</div>

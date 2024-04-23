@@ -75,7 +75,7 @@ export default function Blog() {
             </div>
 	    <hr className="border-gray-300"></hr>
 
-	<AskAI/>
+  {/*<AskAI/>*/}
         </div>
     );
 }

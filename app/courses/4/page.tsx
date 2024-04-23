@@ -68,7 +68,7 @@ export default function course4(){
 	  <>
 		{isPurchased ? (
 		  <div className="py-10">
-			<FileSystem title="5th year revision course part II/Experiment course part II" files={files} />
+			<FileSystem title="6th year course on fuels and thermochemistry" files={files} />
 		  </div>
 		) : null}
 	  </>

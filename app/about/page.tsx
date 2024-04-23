@@ -3,12 +3,12 @@ import profilePic from "@/components/profilepictur.jpg";
 
 export default function AboutMe() {
   return (
-    <div className="pt-8 pb-10 min-h-screen flex justify-center items-center">
+    <div className="pt-4 pb-10 min-h-screen flex justify-center items-center">
       <div className="max-w-4xl p-8 bg-white rounded-lg">
     <div className="font-bold text-3xl flex justify-center pb-8">About me</div>
         <div className="flex flex-col md:flex-row items-center md:justify-between">
           <div className="mb-6 md:mb-0 md:mr-8 max-w-xs">
-            <h2 className="text-2xl font-bold mb-4">Biography</h2>
+            <h2 className="text-2xl font-bold">Biography</h2>
             <p className="text-gray-700 leading-relaxed">
               My name is Dr. Lena Kadri. I’m a recent PhD graduate in chemistry from Trinity College Dublin, Ireland. Many of you may already know me from my Instagram page, Chemistry School of Growth (C.S.G.). Nevertheless, I’ll share a bit about my personal background and overall chemistry experience. So, where to begin…
             </p>

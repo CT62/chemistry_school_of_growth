@@ -449,7 +449,7 @@ return (
   <>
     {isPurchased ? (
       <div className="py-10">
-        <FileSystem title="5th year revision course part II/Experiment course part II" files={files} />
+        <FileSystem title="5th year revision course part I" files={files} />
       </div>
     ) : null}
   </>
