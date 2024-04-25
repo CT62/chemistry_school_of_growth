@@ -14,6 +14,7 @@ import StarHalf from './star-half';
 import { useSession, signIn } from 'next-auth/react'
 import { parse } from 'path';
 import axios from "axios";
+
 interface Props {
   title: string;
   points: string[];
