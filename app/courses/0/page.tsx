@@ -4,10 +4,9 @@ import FileSystem from '@/components/FilePage.tsx';
 import { useRouter } from 'next/navigation';
 import { useState,useEffect } from 'react';
 import { useSession } from 'next-auth/react';
-import prisma from '../../prisma/client';
 
 
-export default function course0(){
+export default function Course0(){
 	const files = [
     		{
         	FileName: 'Lesson 1',
@@ -122,32 +121,30 @@ export default function course0(){
     		},
 
 	];
-
-	const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const [isPurchased, setIsPurchased] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-  const fetchData = async () => {
-    if (!session) {
-    	router.push('/signin');
-    } else {
-      const response = await axios.post('/api/isPurchased', { 'CourseID': String(3), 'userEmail': session?.user?.email });
-      setIsPurchased(response.data.isPurchased);
-    }
-  };
+    const fetchData = async () => {
+      if (!session) {
+        router.push('/signin');
+      } else {
+        const response = await axios.post('/api/isPurchased', { 'CourseID': '0', 'userEmail': session?.user?.email });
+        setIsPurchased(response.data.isPurchased);
+      }
+    };
 
-  fetchData();
-}, [session]);
+    fetchData();
+  }, [session, router]);
 
-return (
-  <>
-    {isPurchased ? (
-      <div className="py-10">
-        <FileSystem title="Organic chemistry I" files={files} />
-      </div>
-    ) : null}
-  </>
-);	
-}
+  return (
+    <>
+      {isPurchased ? (
+        <div className="py-10">
+          <FileSystem title="Organic Chemistry I" files={files} />
+        </div>
+      ) : null}
+    </>
+  );
 

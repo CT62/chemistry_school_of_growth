@@ -4,9 +4,8 @@ import FileSystem from '@/components/FilePage.tsx';
 import { useRouter } from 'next/navigation';
 import { useState,useEffect } from 'react';
 import { useSession } from 'next-auth/react';
-import prisma from '../../prisma/client';
 
-export default function course3(){
+export default function Course3(){
 	const files = [
 {
         FileName: 'Recordings',
@@ -374,7 +373,7 @@ useEffect(() => {
     if (!session) {
     	router.push('/signin');
     } else {
-      const response = await axios.post('/api/isPurchased', { 'CourseID': String(3), 'userEmail': session?.user?.email });
+      const response = await axios.post('/api/isPurchased', { 'CourseID': "3", 'userEmail': session?.user?.email });
       setIsPurchased(response.data.isPurchased);
     }
   };
