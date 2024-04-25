@@ -19,6 +19,7 @@ model User {
 
   accounts  Account[]
   purchases Purchase[]
+  Review    Review[]
 }
 
 model Account {
@@ -55,15 +56,15 @@ model Course {
 
 model Purchase {
   id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  courseId  String 
+  courseId  String
   userEmail String
   User      User?   @relation(fields: [userId], references: [id])
   userId    String? @db.ObjectId
 }
 
 model Review {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  courseId  String
-  User      User?   @relation(fields: [userId], references: [id])
-  userId    String? @db.ObjectId
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  courseId String
+  User     User?   @relation(fields: [userId], references: [id])
+  userId   String? @db.ObjectId
 }

@@ -58,6 +58,7 @@ export default function CourseCard({
   	try {
     		const ispurchased = await axios.post('/api/isPurchased', { 'CourseID': courseID, 'userEmail': session?.user?.email });
     		setIsPurchased(ispurchased.data.isPurchased);
+        console.log(ispurchased.data.isPurchased)
     		return ispurchased.data.isPurchased;
   	} catch (error) {
   		console.error('Error checking purchase status:', error);
@@ -69,17 +70,19 @@ export default function CourseCard({
   	setIsLoginVisable(!isLoginVisable);
   }
 
-  const audioElem = useRef();
+    useEffect(() =>{
+  	checkPurchased();
+  },[])
 
-  useEffect(() => {
-    if (isplaying) {
-      audioElem.current.play();
-    }
-    else {
-      audioElem.current.pause();
-    }
-  }, [isplaying, currentSong])
+  let audioElem = useRef();
 
+useEffect(() => {
+    if (isplaying && audioElem.current) {
+        audioElem.current.play();
+    } else if (audioElem.current) {
+        audioElem.current.pause();
+    }
+}, [isplaying, currentSong])
   const onPlaying = () => {
     const duration = audioElem.current.duration;
     const ct = audioElem.current.currentTime;
@@ -149,7 +152,7 @@ export default function CourseCard({
   <h2 className="text-xl font-bold text-sm pb-2 pr-2">{title}</h2>
   <div style={{ width: "40px", height: "40px" }}>
     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1.5 px-1.5 rounded-full">
-      <audio src={AudioURL} ref={audioElem} onTimeUpdate={onPlaying} />
+    <audio ref={audioElem} src={AudioURL} onTimeUpdate={onPlaying} />
       <Player songs={songs} setSongs={setSongs} isplaying={isplaying} setisplaying={setisplaying} audioElem={audioElem} currentSong={currentSong} />
     </button>
   </div>
