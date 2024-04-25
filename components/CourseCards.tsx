@@ -242,7 +242,7 @@ export default function CourseCard({
                       </div>
                       <hr className="my-4 border-gray-300" />
                       <div className="flex">
-                        <p className="pl-4 font-light">Don't have an account?</p>
+                        <p className="pl-4 font-light">don&apos;t have an existing account?</p>
                         <a className="pl-1 font-semibold text-blue-600" href="/signup">Sign up</a>
                       </div>
                     </form>
