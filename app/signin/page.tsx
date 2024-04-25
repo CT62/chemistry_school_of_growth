@@ -88,9 +88,10 @@ export default function Login() {
                 </button>
               </div>
             </form>
-	   <div className="flex pt-5 text-sm">
-	   <p className="pl-3 pr-1.5">don't have an existing account?</p><a href="/signup" className="text-blue-500 font-bold">Sign up</a>
-	   </div>
+              <div className="flex pt-5 text-sm">
+    <p className="pl-3 pr-1.5">don&apos;t have an existing account?</p>
+    <a href="/signup" className="text-blue-500 font-bold">Sign up</a>
+  </div>
           </div>
         </div>
       </>
