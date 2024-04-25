@@ -364,30 +364,30 @@ export default function Course3(){
 
 	]},
 	];
-const { data: session, status } = useSession();
-const [isPurchased, setIsPurchased] = useState(false);
-const router = useRouter();
+  const { data: session, status } = useSession();
+  const [isPurchased, setIsPurchased] = useState(false);
+  const router = useRouter();
 
-useEffect(() => {
-  const fetchData = async () => {
-    if (!session) {
-    	router.push('/signin');
-    } else {
-      const response = await axios.post('/api/isPurchased', { 'CourseID': "3", 'userEmail': session?.user?.email });
-      setIsPurchased(response.data.isPurchased);
-    }
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!session) {
+        router.push('/signin');
+      } else {
+        const response = await axios.post('/api/isPurchased', { 'CourseID': "3", 'userEmail': session?.user?.email });
+        setIsPurchased(response.data.isPurchased);
+      }
+    };
 
-  fetchData();
-}, [session]);
+    fetchData();
+  }, [session]);
 
-return (
-  <>
-    {isPurchased ? (
-      <div className="py-10">
-        <FileSystem title="5th year revision course part II/Experiment course part I" files={files} />
-      </div>
-    ) : null}
-  </>
-);	
+  return (
+    <>
+      {isPurchased ? (
+        <div className="py-10">
+          <FileSystem title="5th year revision course part II/Experiment course part I" files={files} />
+        </div>
+      ) : null}
+    </>
+  );
 }
