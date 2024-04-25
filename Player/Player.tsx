@@ -1,6 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-const Player = ({ audioElem, isPlaying, setisplaying }) => {
+interface PlayerProps {
+  audioElem: React.RefObject<HTMLAudioElement>; // Define the type of audioElem prop
+  isPlaying: boolean;
+  setisplaying: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Player: React.FC<PlayerProps> = ({ audioElem, isPlaying, setisplaying }) => {
   const clickRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState<number>(0);
 
@@ -13,19 +19,19 @@ const Player = ({ audioElem, isPlaying, setisplaying }) => {
     const offsetX = e.clientX - rect.left;
     const width = clickRef.current!.clientWidth;
     const percentage = (offsetX / width) * 100;
-    audioElem.current.currentTime = (percentage / 100) * audioElem.current.duration;
+    audioElem.current!.currentTime = (percentage / 100) * audioElem.current!.duration;
   };
 
   useEffect(() => {
     const updateProgress = () => {
-      const progressPercent = (audioElem.current.currentTime / audioElem.current.duration) * 100;
+      const progressPercent = (audioElem.current!.currentTime / audioElem.current!.duration) * 100;
       setProgress(progressPercent);
     };
 
-    audioElem.current.addEventListener('timeupdate', updateProgress);
+    audioElem.current!.addEventListener('timeupdate', updateProgress);
 
     return () => {
-      audioElem.current.removeEventListener('timeupdate', updateProgress);
+      audioElem.current!.removeEventListener('timeupdate', updateProgress);
     };
   }, [audioElem]);
 
@@ -56,4 +62,3 @@ const Player = ({ audioElem, isPlaying, setisplaying }) => {
 };
 
 export default Player;
-
