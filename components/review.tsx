@@ -19,8 +19,8 @@ export default function Review({ reviewName, review }: Props) {
         </div>
         <div id="text" className="pl-5 flex flex-col">
           <div className="flex items-center text-yellow-400">
-            {range.map((item) => (
-              <div className="pr-0.5">
+            {range.map((item, index) => (
+              <div key={index} className="pr-0.5">
                 <StarFill />
               </div>
             ))}
@@ -35,3 +35,4 @@ export default function Review({ reviewName, review }: Props) {
     </>
   );
 }
+

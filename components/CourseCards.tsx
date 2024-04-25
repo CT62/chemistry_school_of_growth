@@ -259,9 +259,12 @@ useEffect(() => {
       <hr className="mt-4 border-gray-300 pb-4" />
       <div className="bottom-section flex justify-between items-end">
         <div className="price-section flex">
-          <p className={`${timeL.saleType!=undefined ? 'text-gray-400 mb-1 mr-2':''}`}>
-            <span className={`${timeL.saleType!=undefined ? 'line-through line-through decoration-red-500' : ''}`}>€{fakeprice}</span>
-          </p>
+<p className={`${timeL.saleType != undefined ? 'text-gray-400 mb-1 mr-2' : ''}`}>
+  <span className={`${timeL.saleType != undefined ? 'line-through line-through decoration-red-500' : ''}`}>
+    €&apos;{fakeprice}&apos;
+  </span>
+</p>
+
 
           {timeL.saleType!=undefined && (
           <p className="text-black font-semibold">€{price}</p>
