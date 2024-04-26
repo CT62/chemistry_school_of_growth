@@ -1,6 +1,6 @@
 "use client"
 import axios from "axios";
-import FileSystem from '@/components/FilePage.tsx';
+import FileSystem from '@/components/FilePage';
 import { useRouter } from 'next/navigation';
 import { useState,useEffect } from 'react';
 import { useSession } from 'next-auth/react';
