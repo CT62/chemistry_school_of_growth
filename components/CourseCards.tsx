@@ -151,7 +151,7 @@ export default function CourseCard({
           <div style={{ width: "40px", height: "40px" }}>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1.5 px-1.5 rounded-full">
               <audio ref={audioElem} src={AudioURL} onTimeUpdate={onPlaying} />
-              <Player songs={songs} setSongs={setSongs} isplaying={isplaying} setIsPlaying={setIsPlaying} audioElem={audioElem} currentSong={currentSong} />
+              <Player songs={songs} setSongs={setSongs} isplaying={isplaying} setisplaying={setIsPlaying} audioElem={audioElem} currentSong={currentSong} />
             </button>
           </div>
         </div>
