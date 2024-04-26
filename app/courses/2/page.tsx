@@ -149,7 +149,7 @@ export default function Course2(){
                                 FileType: 'folder', 
 				Files:[
 					{ FileName: 'Playback', FileType: 'video', ContentID: '198JHYWz1LuVQbRyXBvOSLpuqJkKLYqpU'},
-					{ FileName: 'Audio only Part A', FileType: 'video', Content: '1uH0BOuEJWNjPdDJrXscFv1-mQrgidSdD'},
+					{ FileName: 'Audio only Part A', FileType: 'video', ContentID: '1uH0BOuEJWNjPdDJrXscFv1-mQrgidSdD'},
 				],
                             }
 
