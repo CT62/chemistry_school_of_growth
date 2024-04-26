@@ -6,8 +6,8 @@ import ContentManager from '@/components/ContentManager';
 interface File {
   VideoID?: string;
   ImageID?: string;
-  PdfID: string;
-  DocumentID: string;
+  PdfID?: string;
+  DocumentID?: string;
   FileName: string;
   FileType: string;
   Files?: File[];
