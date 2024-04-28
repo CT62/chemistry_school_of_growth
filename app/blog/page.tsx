@@ -1,5 +1,4 @@
 import React from 'react';
-import AskAI from '../../components/AskAI';
 
 export default function Blog() {
     return (
@@ -73,7 +72,6 @@ export default function Blog() {
             </div>
             <hr className="border-gray-300"></hr>
 
-            {/* <AskAI/> */}
         </div>
     );
 }

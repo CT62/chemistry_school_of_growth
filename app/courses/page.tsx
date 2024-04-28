@@ -1,6 +1,5 @@
 import {useEffect} from "react";
 import Navbar from '@/components/Navbar'
-import AskMe from '@/components/AskMe'
 import prisma from '../prisma/client';
 import Sale from "@/components/Sale"
 import CourseCards from '@/components/CourseCards'
