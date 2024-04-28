@@ -29,7 +29,7 @@ export default function Course0(){
 		{
         	FileName: 'Lesson 3',
         	FileType: 'folder',
-      	  	Files: [
+      	  Files: [
        	     		{ FileName: 'Lesson 3 Part A', FileType: 'video',ContentID:'18_c_S-QHwMd9tNoRk6w78p4be6TQ0SsO'},
        	     		{ FileName: 'Lesson 3 Part B', FileType: 'video',ContentID:'1oC0vY2phV_7Z6HlM34-5SRwLWIAL9iGP'},
        	     		{ FileName: 'Lesson 3 Part C', FileType: 'video',ContentID:'1z1ChHvWkPjKiKF5YX3I8MSPX1BNnCwdS'},
@@ -88,16 +88,6 @@ export default function Course0(){
 			{ FileName: 'Aliphatics vs amomatics', FileType: 'picture', ContentID: '1eiSuCfhSiP-BDUuhxMuuWNND5w1ZKfJg'},
 			{ FileName: 'Formulas', FileType: 'pdf', ContentID:'1ASFy_3gbn8N8JwB4m2uN32m61U9Ihqbm'},
 			{ FileName: 'Single vs double bonds', FileType: 'pdf', ContentID:'171SLmwJRTu8EOu7IPo1UZFPgc0H67hUO'},
-			{
-        	FileName: 'functional groups',
-        	FileType: 'folder',
-      	  	Files: [
-			{ FileName: 'the main players', FileType: 'picture', ContentID: '1gcn9jniv565xznkqrxc3kh-zusm8sri-'},
-			{ FileName: 'functional groups', FileType: 'picture', ContentID:'18gsi3dyqiqdqahif_mcyar-w8efblyum'},
-			{ FileName: 'types of groups', FileType: 'picture', ContentID:'1wqpwqwwmtxuip-yqawv51ocubz_qtqpm'},
-
-       		],
-    		},
 		]
 		},
 		{
