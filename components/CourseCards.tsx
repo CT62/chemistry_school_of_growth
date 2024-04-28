@@ -43,7 +43,12 @@ export default function CourseCard({
   const [isLoginVisible, setIsLoginVisible] = useState(false);
   const [songs, setSongs] = useState(songsdata);
   const [isplaying, setIsPlaying] = useState(false);
-  const [currentSong, setCurrentSong] = useState<{ title: string; url: string; progress: number; length: number }>(songsdata[1]);
+  const [currentSong, setCurrentSong] = useState<{ title: string; url: string; progress: number; length: number }>({
+  title: '',
+  url: '',
+  progress: 0,
+  length: 0
+});
   const noPoints = points[0] === '';
   const router = useRouter();
   let timeL = CalculateTimeLeft();
@@ -83,12 +88,10 @@ export default function CourseCard({
       audioElem.current.pause();
     }
   }, [isplaying, currentSong]);
-const onPlaying = () => {
-  if (audioElem.current) {
-    const duration = audioElem.current.duration;
+
     const ct = audioElem.current.currentTime;
 
-    setCurrentSong(prevSong => ({ ...prevSong, progress: ct / duration * 100, length: duration }));
+    setCurrentSong({ ...currentSong, "progress": ct / duration * 100, "length": duration });
   }
 };
 
