@@ -1,9 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 
 interface PlayerProps {
-  audioElem: React.RefObject<HTMLAudioElement>; // Define the type of audioElem prop
-  isPlaying: boolean;
-  setisplaying: React.Dispatch<React.SetStateAction<boolean>>;
+  songs: { title: string; url: string; }[];
+  setSongs: React.Dispatch<any>;
+  isplaying: boolean;
+  setisplaying: React.Dispatch<boolean>;
+  audioElem: React.RefObject<HTMLAudioElement>;
+  currentSong: { title: string; url: string; progress: number; length: number };
 }
 
 const Player: React.FC<PlayerProps> = ({ audioElem, isPlaying, setisplaying }) => {
@@ -11,7 +14,7 @@ const Player: React.FC<PlayerProps> = ({ audioElem, isPlaying, setisplaying }) =
   const [progress, setProgress] = useState<number>(0);
 
   const PlayPause = () => {
-    setisplaying(prevState => !prevState); // Toggle between playing and pausing
+    setisplaying(prevState => !prevState);
   };
 
   const checkWidth = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
