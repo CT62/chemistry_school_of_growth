@@ -74,7 +74,7 @@ export default function CourseCard({
     checkPurchased();
   }, []);
 
-  let audioElem = useRef();
+  let audioElem = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     if (isplaying && audioElem.current) {
