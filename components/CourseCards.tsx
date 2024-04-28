@@ -1,6 +1,5 @@
 'use client';
 import prisma from '../app/prisma/client';
-import ReactAudioPlayer from "react-audio-player";
 import Player from '@/Player/Player';
 import { songsdata } from '@/Player/audios';
 import React, { useState, useEffect, useRef } from 'react';
