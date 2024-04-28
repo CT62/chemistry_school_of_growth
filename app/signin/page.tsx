@@ -21,7 +21,7 @@ export default function Login() {
       }
     })
 
-    const loginUser = async (e) => {
+    const loginUser = async (e:React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
       signIn('credentials',
         {
