@@ -107,8 +107,8 @@ export default function Course2(){
                 ]
             },
 	    {
-                FileName: 'Lesson 3', 
-                FileType:'folder', 
+        FileName: 'Lesson 3', 
+        FileType:'folder', 
                 Files:[
                     { 
                         FileName: 'Part A', 
@@ -131,7 +131,7 @@ export default function Course2(){
                                 FileType: 'video', 
                                 ContentID: '1m9kLXF2iHInBrhcylya72AjjOB8OVpBX'
                             },
-			]
+			                  ]
                     },
                 ]
             },
@@ -374,10 +374,10 @@ export default function Course2(){
 		{ FileName: 'Lesson 2,3,4 (The Atom)', FileType: 'folder', Files: [
 			{ FileName: 'The Atom', FileType: 'pdf', ContentID: '1M1gKXQdgAnlXkcYNX-T5TPk2f0h2IUEk'},
 			{ FileName: 'The Atom additional info', FileType: 'pdf', ContentID: '1ViqLHJcR9UvBb8q5sGOA2THxIhiNHSTG'},
-			{ filename: 'Period table elements', filetype: 'picture', contentid: '1MxY6bwXJBcmGm8Dxx5t6YGDBS8V8z_SW'},
-			{ filename: 'Period table notes', filetype: 'picture', contentid: '1ZMYMk-ebX6sgxaeUs1eO8TP3iZkZfJxy'},
-			{ filename: 'Atomic structure', filetype: 'picture', contentid: '1oR1UVgLK-B4N-f-ynHeVRJdPWacJhuiT'},
-			{ filename: 'Atomic structure notes', filetype: 'picture', contentid: '1Vkv3iILYDBXN4URl2Y5bHb5VWLXLecTB'},
+			{ FileName: 'Period table elements', FileType: 'picture', ContentID: '1MxY6bwXJBcmGm8Dxx5t6YGDBS8V8z_SW'},
+			{ FileName: 'Period table notes', FileType: 'picture', ContentID: '1ZMYMk-ebX6sgxaeUs1eO8TP3iZkZfJxy'},
+			{ FileName: 'Atomic structure', FileType: 'picture', ContentID: '1oR1UVgLK-B4N-f-ynHeVRJdPWacJhuiT'},
+			{ FileName: 'Atomic structure notes', FileType: 'picture', ContentID: '1Vkv3iILYDBXN4URl2Y5bHb5VWLXLecTB'},
 		]},
 		{ FileName: 'Lesson 5,6,7 (Electronic structure arrangement)', FileType: 'folder', Files:[
 			{ FileName: 'Lesson 5', FileType: 'folder', Files: [
