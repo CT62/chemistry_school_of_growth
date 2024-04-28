@@ -83,13 +83,12 @@ export default function CourseCard({
       audioElem.current.pause();
     }
   }, [isplaying, currentSong]);
-
 const onPlaying = () => {
   if (audioElem.current) {
     const duration = audioElem.current.duration;
     const ct = audioElem.current.currentTime;
 
-    setCurrentSong({ ...currentSong, "progress": ct / duration * 100, "length": duration });
+    setCurrentSong(prevSong => ({ ...prevSong, progress: ct / duration * 100, length: duration }));
   }
 };
 
