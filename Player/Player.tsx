@@ -14,7 +14,7 @@ const Player: React.FC<PlayerProps> = ({ audioElem, isplaying, setisplaying }) =
   const [progress, setProgress] = useState<number>(0);
 
   const PlayPause = () => {
-    setisplaying(prevState => !prevState);
+    setisplaying((prevState:boolean) => !prevState);
   };
 
   const checkWidth = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
