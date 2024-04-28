@@ -84,12 +84,14 @@ export default function CourseCard({
     }
   }, [isplaying, currentSong]);
 
-  const onPlaying = () => {
+const onPlaying = () => {
+  if (audioElem.current) {
     const duration = audioElem.current.duration;
     const ct = audioElem.current.currentTime;
 
     setCurrentSong({ ...currentSong, "progress": ct / duration * 100, "length": duration });
-  };
+  }
+};
 
   const handlePurchase = async () => {
     if (status === "authenticated") {
