@@ -119,7 +119,7 @@ const onPlaying = () => {
     }
   };
 
-  const loginUser = async (e) => {
+  const loginUser = async (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await signIn('credentials', {
       ...data,
