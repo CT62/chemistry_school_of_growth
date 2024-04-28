@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import {BsFillPlayCircleFill, BsFillPauseCircleFill, BsFillSkipStartCircleFill, BsSkipEndCircleFill, BsFillSkipEndCircleFill} from 'react-icons/bs';
 
 const Player = ({audioElem, isplaying, setisplaying, currentSong, setCurrentSong, songs})=> {
 
