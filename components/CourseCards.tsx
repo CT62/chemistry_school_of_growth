@@ -43,7 +43,7 @@ export default function CourseCard({
   const [isLoginVisible, setIsLoginVisible] = useState(false);
   const [songs, setSongs] = useState(songsdata);
   const [isplaying, setIsPlaying] = useState(false);
-  const [currentSong, setCurrentSong] = useState(songsdata[1]);
+  const [currentSong, setCurrentSong] = useState<{ title: string; url: string; progress: number; length: number }>(songsdata[1]);
   const noPoints = points[0] === '';
   const router = useRouter();
   let timeL = CalculateTimeLeft();
