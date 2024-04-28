@@ -9,7 +9,7 @@ interface PlayerProps {
   currentSong: { title: string; url: string; progress: number; length: number };
 }
 
-const Player: React.FC<PlayerProps> = ({ audioElem, isPlaying, setisplaying }) => {
+const Player: React.FC<PlayerProps> = ({ audioElem, isplaying, setisplaying }) => {
   const clickRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState<number>(0);
 
