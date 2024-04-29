@@ -264,7 +264,7 @@ const onPlaying = () => {
         <div className="price-section flex">
           <p className={`${timeL.saleType != undefined ? 'text-gray-400 mb-1 mr-2' : ''}`}>
             <span className={`${timeL.saleType != undefined ? 'line-through line-through decoration-red-500' : ''}`}>
-              €{'\''}{fakeprice}{'\''}
+              €{fakeprice}
             </span>
           </p>
           {timeL.saleType != undefined && (
