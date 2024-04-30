@@ -90,24 +90,15 @@ export default function Course0(){
 			{ FileName: 'Single vs double bonds', FileType: 'pdf', ContentID:'171SLmwJRTu8EOu7IPo1UZFPgc0H67hUO'},
 		]
 		},
-{
-  FileName: 'Exam Questions and Solutions',
-  FileType: 'folder',
-  Files: [
+                {FileName: 'Exam Questions and Solutions',FileType: 'folder',Files: [
     { FileName: 'Exam Questions Only', FileType: 'document', ContentID: '18ZGA16N5oU0j2O41IWwnur6kwnrbkz2e' },
-    {
-      FileName: 'Exam Qs & Slns',
-      FileType: 'folder',
-      Files: [
+    {FileName: 'Exam Qs & Slns',FileType: 'folder',Files: [
         { FileName: 'Qs & Slns', FileType: 'picture', ContentID: '1j9JsnjDfsu2xG26-CbOoXN3rBTiMVW7X' },
         { FileName: 'Qs & Slns covered in the course', FileType: 'picture', ContentID: '1K_y0zb0VXnM7WR3ykIM83YgJXWlbsl2M' },
       ],
     },
   ],
 },
-
-       		],
-    		},
 
 	];
   const { data: session } = useSession();
