@@ -2,8 +2,15 @@
 import calculateTimeLeft from "@/components/calculateTimeLeft"
 import React, { useState, useEffect } from 'react';
 
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+}
+
+
 export default function Sale(){
-  const [saleInfo, setSaleInfo] = useState(calculateTimeLeft());
+  const [saleInfo, setSaleInfo] = useState({ timeLeft: { days: 0, hours: 0, minutes: 0 }, saleType: '' });
   const [isPopupShown, setIsPopupShown] = useState(sessionStorage.getItem("popup") !== "false");
 
   useEffect(() => {
