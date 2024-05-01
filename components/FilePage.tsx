@@ -50,7 +50,7 @@ if (selectedFile) {
 
 
           </button>
-          <ContentManager ContentID={selectedFile.ContentID} />
+          <ContentManager ContentID={selectedFile.ContentID || ''} />
         </div>
       );
     }
