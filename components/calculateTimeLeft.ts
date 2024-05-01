@@ -41,12 +41,6 @@ const calculateTimeLeft = () => {
       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((difference / (1000 * 60)) % 60),
     };
-  } else {
-    timeLeft = {
-      days: null,
-      hours: null,
-      minutes: null,
-    };
   }
   
   return { timeLeft, saleType };
