@@ -5,7 +5,6 @@ const calculateTimeLeft = () => {
   let saleType;
 
   if ((DayMonth.month === 2 && DayMonth.day >= 10 && DayMonth.day <= 15) || (currentDate.getMonth() + 1 === 4 && DayMonth.day >= 2 && DayMonth.day <= 9)) {
-    // No sale logic for this period
   } else if ((currentDate.getMonth() + 1) === 6 || (currentDate.getMonth() + 1) === 7 || (currentDate.getMonth() + 1) === 8 || ((currentDate.getMonth() + 1) === 9 && DayMonth.day <= 22)) {
     saleType = "Summer Sale";
     if ((currentDate.getMonth() + 1) === 6 && DayMonth.day >= 20) {
@@ -30,7 +29,11 @@ const calculateTimeLeft = () => {
   }
 
   const difference = saleDate ? saleDate.getTime() - currentDate.getTime() : 0;
-  let timeLeft = {};
+  const timeLeft = {
+    days: 0,
+    hours: 0,
+    minutes: 0
+  };
 
   if (difference >= 0) {
     timeLeft = {
