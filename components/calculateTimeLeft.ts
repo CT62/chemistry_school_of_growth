@@ -29,7 +29,7 @@ const calculateTimeLeft = () => {
   }
 
   const difference = saleDate ? saleDate.getTime() - currentDate.getTime() : 0;
-  const timeLeft = {
+  let timeLeft = {
     days: 0,
     hours: 0,
     minutes: 0
@@ -48,7 +48,7 @@ const calculateTimeLeft = () => {
       minutes: null,
     };
   }
-
+  
   return { timeLeft, saleType };
 };
 
