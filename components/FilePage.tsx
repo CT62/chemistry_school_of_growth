@@ -4,7 +4,7 @@ import FileIcon from '@/components/FileIcon';
 import ContentManager from '@/components/ContentManager';
 
 interface File {
-  ContentID: string;
+  ContentID?: string;
   FileName: string;
   FileType: string;
   Files?: File[];

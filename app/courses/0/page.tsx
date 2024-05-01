@@ -23,8 +23,7 @@ export default function Course0(){
       	  	Files: [
        	     		{ FileName: 'Lesson 2 Part A', FileType: 'video',ContentID:'1pcr1POMBdvnvWYhMgf5S-JCWJraQLg4D'},
        	     		{ FileName: 'Lesson 2 Part B', FileType: 'video',ContentID:'1wovkEj3ji112hnkFQ2Sj49djS2xe7599'},
-       	     		{ FileName: 'Lesson 2 Part C', FileType: 'video',ContentID:'1PkJ3xLBoO0vuL8puV_YfEJvS6CP4Tt70'},
-       		],
+       	     		{ FileName: 'Lesson 2 Part C', FileType: 'video',ContentID:'1PkJ3xLBoO0vuL8puV_YfEJvS6CP4Tt70'}, ],
     		},
 		{
         	FileName: 'Lesson 3',
@@ -117,6 +116,14 @@ export default function Course0(){
 
     fetchData();
   }, [session, router]);
+files.forEach((files, lessonIndex) => {
+    files.Files.forEach((file, fileIndex) => {
+        if (!file.ContentID) {
+            console.log(`Missing ContentID in Lesson ${file.FileName}`);
+            console.log(file);
+        }
+    });
+});
 
   return (
     <>
