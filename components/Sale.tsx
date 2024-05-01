@@ -18,11 +18,10 @@ export default function Sale(){
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const { timeLeft, saleType } = calculateTimeLeft();
-      setSaleInfo({ timeLeft, saleType });
-    }, 60000);
-
+const timer = setTimeout(() => {
+  const { timeLeft = { days: 0, hours: 0, minutes: 0 }, saleType = '' } = calculateTimeLeft() || {};
+  setSaleInfo({ timeLeft, saleType });
+}, 60000);
     return () => clearTimeout(timer);
   }, []);
 
