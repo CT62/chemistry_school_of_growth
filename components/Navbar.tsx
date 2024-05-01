@@ -16,12 +16,16 @@ function classNames(...classes:string[]) {
 
 export default function Header() {
   const { data: session, status } = useSession();
-  const name = session?.user?.name.split(" ");
+  const name = session?.user?.name ? session.user.name.split(" ") : null;
   let initials;
-  try{
-    initials = name ? `${name[0][0].toUpperCase()}${name[1][0].toUpperCase()}` : '';
-  }catch{
-    initials = name ? `${name[0][0].toUpperCase()}${name[0][1].toUpperCase()}` : '';
+  try {
+  if (name) {
+    initials = `${name[0][0].toUpperCase()}${name[1][0].toUpperCase()}`;
+  } else {
+    initials = '';
+  }
+  } catch {
+    initials = '';
   }
   return (
     <Disclosure as="nav" className="z-10 w-full absolute bg-white">
