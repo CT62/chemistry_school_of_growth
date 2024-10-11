@@ -17,7 +17,7 @@ export default async function Courses(){
   let time = calculateTimeLeft();
   let audios =["/organic_chemistry_1.mp3","/organic_chemistry_2.mp3","/5th_year_revision_course_part_I.mp3","/experiment_course_part_1.mp3","/fuels_and_thermochemistry.mp3","/experiment_course_part_2.mp3","/ultimate_h1_guide.mp3"];
   return (
-  <div className="bg-[#1e42b0] pb-8">
+  <div className="bg-[#1e42b0]">
     <div aria-hidden="true" className="absolute inset-0 grid grid-cols-3 -space-x-52">
       <div className="blur-[106px] h-32 bg-cyan-300"></div>
       <div className="blur-[106px] h-56 bg-cyan-400"></div>
@@ -25,19 +25,7 @@ export default async function Courses(){
     </div>
 
     <h1 className="relative pt-16 font-bold text-5xl flex justify-center text-white">Courses</h1>
-    <div className="relative pt-24 flex justify-center">
-      <div className="pt-8 px-2 pb-4 bg-white md:w-3/5 rounded-lg item-center">
-        <div className="text-center text-black font-bold text-3xl pb-4">Whats included in each course</div>
-        <li className="sm:flex sm:justify-center pb-2.5">Notes</li>
-        <li className="sm:flex sm:justify-center pb-2.5">Exam questions & solutions</li>
-        <li className="sm:flex sm:justify-center pb-2.5">Unlimited access to 1-on-1 questions and solutions by emailing/messaging me directly</li>
-        <li className="sm:flex sm:justify-center pb-2.5">On demand access to recordings for the duration of your Leaving Cert</li>
-        <li className="sm:flex sm:justify-center pb-2.5">Free video solutions to material covered outside of the course content</li>
-        <li className="sm:flex sm:justify-center pb-2.5">Tips on how to get a H1</li>
-      </div>
-    </div>
-
-
+    
 
 
     <div className="relative pb-14 pt-2 font-semibold text-xl justify-center text-white flex justify-center">
@@ -65,6 +53,18 @@ export default async function Courses(){
         ))}
       </div>
     </div>
+     <div className="relative pt-24 pb-0">
+      <div className="pt-8 px-2 pb-4 w-full bg-white item-center h-full">
+        <div className="text-center text-black font-bold text-3xl pb-4">Whats included in each course</div>
+        <li className="sm:flex sm:justify-center pb-2.5">Notes</li>
+        <li className="sm:flex sm:justify-center pb-2.5">Exam questions & solutions</li>
+        <li className="sm:flex sm:justify-center pb-2.5">Unlimited access to 1-on-1 questions and solutions by emailing/messaging me directly</li>
+        <li className="sm:flex sm:justify-center pb-2.5">On demand access to recordings for the duration of your Leaving Cert</li>
+        <li className="sm:flex sm:justify-center pb-2.5">Free video solutions to material covered outside of the course content</li>
+        <li className="sm:flex sm:justify-center pb-2.5">Tips on how to get a H1</li>
+      </div>
+    </div>
   </div>
+
 );
 }
